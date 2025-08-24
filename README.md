@@ -1,4 +1,4 @@
-# Raspberry_MAME_Project
+# Raspberry_RetroPie_Project
 
 ## 1. Project Overview
 
