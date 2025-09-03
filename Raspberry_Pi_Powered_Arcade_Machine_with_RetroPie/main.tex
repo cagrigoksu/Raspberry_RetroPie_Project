@@ -1,0 +1,67 @@
+% Document class
+\documentclass[a4paper,12pt]{scrreprt}
+\usepackage[left= 2.5cm,right = 2cm, bottom = 4 cm]{geometry}
+
+% Document information
+\usepackage[
+pdftitle={Raspberry Pi-Powered Arcade Machine with RetroPie},
+pdfsubject={},
+pdfauthor={Cagri Goksu USTUNDAG},
+pdfkeywords={},	
+% no frame left
+hidelinks
+]{hyperref}
+
+% Load Settings and image folder
+\include{Z_Settings/settings}
+\graphicspath{{F_Figures/}}
+
+% ================= Start of document ================
+\begin{document}
+
+	% Pages without header, footer, page number https://www.overleaf.com/project/6400ccea7cf6fcf3679afdeb
+	\pagestyle{empty}
+	
+	% Include cover page as pdf 
+        \includepdf{A_Cover/Raspberry Pi-Powered Arcade Machine with RetroPie}
+	
+	\pagenumbering{Roman}
+	%\setcounter{page}{3}
+	\cleardoubleoddpage
+	
+	% activated pagestyle for whole document
+	%\pagestyle{fancy}
+	\pagestyle{plain}
+	%\setcounter{page}{1}
+		
+	% Table of contents
+	\phantomsection
+    % \addcontentsline{toc}{chapter}{\mdseries\textsc{Table of Contents}}
+	\addtocontents{toc}{\protect\thispagestyle{fancy}} % header
+	\tableofcontents
+	%\setcounter{page}{3}
+	\clearpage
+	
+	% List of figures 
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\mdseries\textsc{\listfigurename}}
+	\addtocontents{lof}{\protect\thispagestyle{fancy}}
+	\listoffigures
+	\clearpage
+	
+	\pagenumbering{arabic}
+	
+	% Include chapters
+	
+	\include{C1_Introduction/introduction}
+
+	\include{C2_Hardware_Components/chapter2}
+	
+	\include{C3_SD_Card_Preparation/chapter3}
+
+	\include{C4_Arcade_Machine_Setup/chapter4}
+
+	\include{C5_Configurations/chapter5}
+
+		
+\end{document}

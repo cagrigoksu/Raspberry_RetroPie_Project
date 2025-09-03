@@ -1,0 +1,66 @@
+\chapter{Configurations}
+\label{cha:configurations}
+
+After assembling the arcade machine and installing RetroPie, it is necessary to configure inputs and interface settings to ensure proper operation. This chapter explains how to map keyboard and joystick inputs, adjust UI modes, and manage game visibility.
+
+\section{Emulator Input Mapping}
+\label{sec:input_mapping}
+
+Input mapping allows the emulator to recognize user actions correctly, whether from a keyboard or physical arcade controls. 
+Proper mapping ensures that commands, movements, and hotkeys work as intended. Input mapping is configured through the “Configure Input” menu. 
+When you first connect a controller or arcade buttons, EmulationStation will automatically prompt you to assign each button and joystick direction. 
+This menu also allows to define hotkeys for system commands, such as exiting a game or opening the RetroPie menu. 
+
+The menu is accessible in RetroPie screen, by pressing the assigned \texttt{Start} button to enter the main menu and selecting \texttt{Configure Input}.
+\subsection{Keyboard}
+\label{subsec:keyboard}
+
+Keyboard inputs are mainly used for configuration and system navigation. To set up keyboard controls:
+
+\begin{enumerate}
+    \item From the RetroPie main menu, navigate to \textbf{Configure Input}.
+    \item Follow the on-screen prompts to assign keys for system functions, hotkeys, and navigation.
+\end{enumerate}
+
+\subsection{Joystick and Buttons}
+\label{subsec:joystick_buttons}
+
+Joystick and button mapping is used exclusively for gameplay. RetroPie automatically detects new controllers on startup. To configure:
+
+\begin{enumerate}
+    \item Navigate to main menu, and then \textbf{Configure Input}.
+    \item Follow the on-screen instructions to map each direction and button to the corresponding arcade control.
+\end{enumerate}
+
+\section{Emulator UI Settings}
+\label{sec:emulator_settings}
+
+RetroPie allows customization of the user interface to control visibility, accessibility, and navigation. These settings help secure configurations and make the arcade machine user-friendly.
+
+\subsection{UI Mode Settings}
+\label{subsec:ui_settings}
+
+RetroPie supports three UI modes: Full, Kiosk, and Kid mode. To configure:
+
+\begin{enumerate}
+    \item From the main menu, go to \textbf{RetroPie → Configuration → UI Settings}.
+    \item Choose the desired mode:
+        \begin{itemize}
+            \item \textbf{Full Mode} – Complete access to all menus and settings.
+            \item \textbf{Kiosk Mode} – Simplified interface hiding advanced menus.
+            \item \textbf{Kid Mode} – Restricts access to configuration screens to prevent accidental changes by gamers.
+        \end{itemize}
+    \item To temporarily return to Full mode while in Kid mode, press Up, Up, Down, Down, Left, Right, Left, Right, B, A buttons in this order.
+\end{enumerate}
+
+\subsection{Game Settings}
+\label{subsec:game_settings}
+
+Game metadata determines which games are visible in each UI mode:
+
+\begin{enumerate}
+    \item Navigate to \textbf{RetroPie → Configuration → Game Settings}.
+    \item Edit metadata such as genre, rating, or tags to categorize games.
+    \item Only games tagged appropriately for Kid mode will appear when the arcade is running in that restricted mode, ensuring children access approved games.
+    \item Full mode will display the complete library for administrative purposes.
+\end{enumerate}

@@ -1,0 +1,67 @@
+% ============= Packages =============
+
+% 1.5 times spacing
+\usepackage[onehalfspacing]{setspace}
+
+% Up to 5 levels in subsections (if more required, increase number)
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+% Standard Packages
+\usepackage[utf8]{inputenc}
+%\usepackage[ngerman]{babel} % use if German
+\usepackage[english]{babel} % use if English
+\addto{\captionsenglish}{\renewcommand*{\contentsname}{Table of Contents}}  % comment out if switched to German
+\usepackage[T1]{fontenc}
+\usepackage{graphicx, subfig}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{natbib}
+
+% additional characters of American Mathematical Society
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bbm}
+\DeclareMathOperator*{\argmin}{argmin} %to use argmin as operator
+
+% packages to generate pseudo code
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% added
+\usepackage{pdfpages}
+\usepackage{acronym}
+
+% no indent after new paragraph 
+\setlength{\parindent}{0pt}
+
+% ================= Footnotes =================
+
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter} 
+
+% ================= Header and Footer =================
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+
+\fancyhead{}
+\fancyhead[LE, RO]{\thepage}  % only required for twoside book print. If required, add 'twoside' in document class 
+\fancyhead[LO, RE]{\leftmark}
+
+\fancypagestyle{plain}{
+  \fancyhf{}%
+  \fancyhead[LE, RO]{\thepage}
+  \fancyhead[LO, RE]{\leftmark}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% =============== Package Settings & Misc =============== 
+%special hypernations can be added here, if not recognized by LaTeC
+\hyphenation{De-zi-mal-tren-nung}
+\hyphenation{Ver-bund-werk-stoff}
