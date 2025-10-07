@@ -1,0 +1,78 @@
+\chapter{SD Card Preparation}
+\label{cha:sd_card_preparation}
+
+Before the arcade machine can run, the Raspberry Pi needs a bootable SD card with the RetroPie image. This chapter explains how to write a system image to an SD card and how to extract an image from an existing SD card for backup. Instructions are provided for both Windows and Linux-based systems (e.g., Ubuntu, Debian, ...). The image of this project requires \textbf{ minimum 32GB SD card}.
+
+%-----------------------------------------------------------------
+
+\section{Writing Images to SD Card}
+\label{sec:writing_images_sd_card}
+
+Writing an image to the SD enables Raspberry Pi to boot up and run the RetroPie system. The image writing process erases all data on the SD card, so ensure that any important files are backed up before proceeding.
+
+\subsection{Windows}
+\label{subsec:writing_windows}
+
+On Windows, tools like \textbf{balenaEtcher} or \textbf{Win32 Disk Imager} can be used.
+\begin{enumerate}
+  \item Download and install balenaEtcher (recommended for simplicity; \textit{\textbf{https://etcher.balena.io/}}).
+  \item Insert the SD card into your computer.
+  \item Open balenaEtcher and select the RetroPie image file (\texttt{.img} or \texttt{.zip} ).
+  \item Select the target SD card.
+  \item Click \textbf{Flash} and wait for the process to finish.
+\end{enumerate}
+
+Once the process completes, safely eject the SD card. This SD card is ready to be used to boot up the Raspberry Pi with RetroPie.
+
+\subsection{Linux}
+\label{subsec:writing_linux}
+
+On Linux-based systems, an image can be written to an SD card with \textbf{balenaEtcher} or simply \texttt{dd} command without installing anything. To process with balenaEtcher, refer to Section 2.1.1.
+
+To process using \texttt{dd} command;
+\begin{enumerate}
+  \item Insert the SD card into your computer.
+  \item Identify the device name using \texttt{lsblk} (e.g., \texttt{/dev/sda}).
+    \newline\textbf{Note:} Device name can be different than \texttt{/dev/sdX} depending on your operating system. Something like \texttt{/dev/sdX1} points a partition in the device. Do not include numbers in device name.
+  \item Use the \texttt{dd} command:
+  \begin{verbatim}
+  sudo dd if=retropie.img of=/dev/sdX bs=4M status=progress conv=fsync
+  \end{verbatim}
+\end{enumerate}
+
+Replace \texttt{retropie.img} with the actual image filename and \texttt{/dev/sdX} with your SD card device. Once the process completes, safely eject the SD card. This SD card is ready to be used to boot up the Raspberry Pi with RetroPie.
+
+%-----------------------------------------------------------------
+
+\section{Extracting Images from SD Card}
+\label{sec:extracting_images_sd_card}
+
+Extracting an image from an SD card creates a complete backup of the system. The extracted image can be written to an SD card in order to run the games on multiple arcade machines. This method is also useful to keep a copy in case of corruption. Note that extracting image will have the size of full capacity of your SD card. For instance, an image of an 32GB SD card will have 32GB size.
+
+\subsection{Windows}
+\label{subsec:extracting_windows}
+
+On Windows, the tool for extracting SD card images is \textbf{Win32 Disk Imager}.
+\begin{enumerate}
+  \item Download and install Win32 Disk Imager.
+  \item Insert the SD card into your computer.
+  \item Open the program and select the drive letter that corresponds to your SD card.
+  \item Choose a location and filename for the image file (\texttt{.img}).
+  \item Click \textbf{Read} to copy the SD card contents into the image file.
+\end{enumerate}
+
+\subsection{Linux}
+\label{subsec:extracting_linux}
+
+On Linux-based systems, SD card images can be extracted using the \texttt{dd} command.
+\begin{enumerate}
+  \item Insert the SD card into your computer.
+  \item Identify the device name using \texttt{lsblk} (e.g., \texttt{/dev/sda}). \textbf  \newline\textbf{Note:} Device name can be different than \texttt{/dev/sdX} depending on your operating system. Something like \texttt{/dev/sdX1} points a partition in the device. Do not include numbers in device name.
+  \item Run the following command in a terminal:
+  \begin{verbatim}
+  sudo dd if=/dev/sdX of=~/backup.img bs=4M status=progress
+  \end{verbatim}
+    %\item compress the image
+\end{enumerate}
+
+Replace \texttt{sdX} in \texttt{/dev/sdX} with the correct device name, and then wait for the process to complete. In case of an interruption during the process, retry step 3.
