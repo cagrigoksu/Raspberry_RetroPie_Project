@@ -1,7 +1,7 @@
 \chapter{Configurations}
 \label{cha:configurations}
 
-It is necessary to configure inputs and interface settings to ensure proper operation. This chapter explains how to map keyboard and joystick inputs to default setup, adjust UI modes, and manage game visibility.
+It is necessary to configure inputs and interface settings to ensure proper operation. This chapter explains how to map keyboard and joystick inputs to default setup and manage game selection. The provided SD cards are already configured to default settings.
 
 \section{Emulator Input Mapping}
 \label{sec:input_mapping}
@@ -52,42 +52,45 @@ Joystick and arcade button mapping is used exclusively for gameplay. RetroPie au
       \item Button-B → B
       \item Button-X → X
       \item Button-Y → Y
-      \item Hotkey → \textbf{Important:} Do not enter any button for hotkey by skipping it. When you exit the configuration, a hotkey button will be asked to use Select button as default. Choose \textbf{Yes} if you have multiple games, \textbf{No} if you have single game.
+      \item Hotkey → \textbf{Important:} Do not enter any button for hotkey by skipping it. When you exit the configuration, a hotkey button will be asked to use Select button as default. Choose \textbf{No}. This makes the device blocked to access configuration menu using hotkey combinations.
     \end{itemize}
 \end{enumerate}
 
 \section{Emulator UI Settings}
 \label{sec:emulator_settings}
 
-These settings help secure configurations and make the arcade machine user-friendly. Using the settings below, the configuration menus will be only accessible by keyboard. The gamers are prevented from entering these menus.
-
-\subsection{UI Mode Settings}
-\label{subsec:ui_settings}
-
-This setting manages access to the menus by the user. To configure:
-
-\begin{enumerate}
-  \item From the main menu (Enter button), go to \textbf{UI Settings}. Under UI Mode, there are three different modes:
-    \begin{itemize}
-      \item \textbf{Full Mode} – Complete access to all menus and settings.
-      \item \textbf{Kiosk Mode} – Simplified interface hiding advanced menus.
-      \item \textbf{Kid Mode} – Restricts access to configuration screens to prevent accidental changes by gamers.
-    \end{itemize}
-
-  \item Choose the mode: Full mode to configure system, Kid mode before end-user access to machine.
-  \item To return to Full mode while in Kid mode, press Up, Up, Down, Down, Left, Right, Left, Right, B, A buttons in order.
-\end{enumerate}
+These settings help secure configurations and make the arcade machine user-friendly. Using the settings below, the device will startup with the selected game. This setting is only accessible with the connected keyboard.
 
 \subsection{Game Settings}
 \label{subsec:game_settings}
 
-Game metadata determines which games are visible in each UI mode:
+In order to configure startup game, you need to open terminal on Raspberry Pi. For this, follow the steps below:
 
 \begin{enumerate}
-  \item Navigate to game in game list and open \textbf{Options} by pressing Select button.
-  \item Edit game metadata and make \textbf{KIDGAME} on.
+  \item If a game is running, go back to EmulationStation using \textbf{Left Ctrl + Enter} buttons.
+  \item To enter the terminal press \textbf{F4}.
+  \item Locate and edit the configuration file:
     \begin{itemize}
-      \item Only games tagged appropriately for Kid mode will appear when the arcade is   running in that restricted mode, ensuring children access approved games.
-      \item Full mode will display the complete game library.
+      \item Go to file location:
+        \begin{verbatim}
+          $ cd /opt/retropie/configs/all/
+        \end{verbatim}
+      \item Set a game to run on startup:
+        \begin{verbatim}
+          $ nano autostart.sh
+        \end{verbatim}
+      \item Edit the following part of the line:
+        \begin{verbatim}
+      "nes" "$HOME/RetroPie/roms/nes/game_name.nes"
+        \end{verbatim}
+        Please do not forget the specify your game system (nes, snes, arcade, etc.) when the game is changed.
+      \item Save the file with \textbf{Ctrl + O}, then \textbf{Enter}, then \textbf{Ctrl + X}
+      \item Restart the system:
+        \begin{verbatim}
+          $ sudo reboot
+        \end{verbatim}
+
     \end{itemize}
 \end{enumerate}
+
+
