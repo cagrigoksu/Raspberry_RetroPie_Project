@@ -119,3 +119,8 @@ To set a game to launch automatically on startup:
    ```bash
     sudo reboot
    ```
+
+## 📜 License
+
+This project is shared for **educational and non-commercial purposes**.  
+Please credit **Digital Inclusion A.S.B.L.** and the author when reusing or modifying.
