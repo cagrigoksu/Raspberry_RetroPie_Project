@@ -21,7 +21,7 @@ Ensure that the buttons are arranged in a comfortable layout for gameplay. While
 
 \subsection{Connecting USB Encoder}
 \label{subsec:connecting_usb_encoder}
-Attach the arcade buttons and joystick wires to the USB encoder in accordance with the Figure 3.2. The encoder converts physical inputs into signals recognized by the Raspberry Pi over USB.
+Attach the arcade buttons and joystick wires to the USB encoder in accordance with the Figure~\ref{fig:usb_encoder_layout}. The encoder converts physical inputs into signals recognized by the Raspberry Pi over USB.
 Note that the joystick uses 5-pin, arcade buttons use 3-pin cable for connection.
 \\
 \begin{figure}[htb]
@@ -41,7 +41,7 @@ In order to complete the setup, all connections must be completed before running
   \item A keyboard to a USB port, if configuration necessary.
   \item A speaker to 3.5mm jack(optional, preferably USB-powered).
   \item One or multiple USB-Encoders to USB ports.
-    \newline\textbf{Important!:} The Raspberry Pi 3B+ includes two USB blocks, each with two ports (see Figure 3.3). Port priority is determined first by block, with Block-A taking precedence over Block-B, and then by position, with the top port prioritized over the bottom. The resulting order is: A-top, A-bottom, B-top, B-bottom.
+    \newline\textbf{Important!:} The Raspberry Pi 3B+ includes two USB blocks, each with two ports (see Figure~\ref{fig:usb_ports}). Port priority is determined first by block, with Block-A taking precedence over Block-B, and then by position, with the top port prioritized over the bottom. The resulting order is: A-top, A-bottom, B-top, B-bottom.
 
     \newpage
 
@@ -54,16 +54,16 @@ In order to complete the setup, all connections must be completed before running
 
 \end{itemize}
 
-These steps provides all the necessary connections to complete the hardware assembly, except power supply. Once the power is connectred over micro-USB to the Raspberry, the system will start up.
-Figure 3.4 shows the fully-connected system schema.
+These steps provides all the necessary connections to complete the hardware assembly, except power supply. Once the power is connected over micro-USB to the Raspberry, the system will start up.
+Figure~\ref{fig:system_schema} shows the fully-connected system schema.
 \\
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=0.58]{F_Figures/system_schema.png}
   \caption{Fully-connected system schema.}
-  \label{fig:system_schmema}
+  \label{fig:system_schema}
 \end{figure}
 
 \section{Running the System}
 \label{sec:running_system}
-Once the prepared SD card inserted into the Raspberry Pi, power the device on by pluging power cable. It is important to inserting SD card before powering on the device. After booting, the system will run on the RetroPie.
+Once the prepared SD card inserted into the Raspberry Pi, power the device on by pluging power cable. It is important to insert SD card before powering on the device. After booting, the system will run on the RetroPie.

@@ -8,7 +8,6 @@
   pdfsubject={},
   pdfauthor={Cagri Goksu USTUNDAG},
   pdfkeywords={},
-  % no frame left
   hidelinks
 ]{hyperref}
 
@@ -19,27 +18,21 @@
 % ================= Start of document ================
 \begin{document}
 
-% Pages without header, footer, page number https://www.overleaf.com/project/6400ccea7cf6fcf3679afdeb
 \pagestyle{empty}
 
 % Include cover page as pdf
 \includepdf{A_Cover/Raspberry Pi-Powered Arcade Machine with RetroPie}
 
 \pagenumbering{Roman}
-%\setcounter{page}{3}
 \cleardoubleoddpage
 
 % activated pagestyle for whole document
-%\pagestyle{fancy}
 \pagestyle{plain}
-%\setcounter{page}{1}
 
 % Table of contents
 \phantomsection
-% \addcontentsline{toc}{chapter}{\mdseries\textsc{Table of Contents}}
 \addtocontents{toc}{\protect\thispagestyle{fancy}} % header
 \tableofcontents
-%\setcounter{page}{3}
 \clearpage
 
 % List of figures
@@ -53,14 +46,16 @@
 
 % Include chapters
 
-%\include{C_Chapters/Introduction/introduction}
+\include{C_Chapters/1_Introduction/chapter}
 
-\include{C_Chapters/1_Hardware_Components/chapter}
+\include{C_Chapters/2_Hardware_Components/chapter}
 
-\include{C_Chapters/2_SD_Card_Preparation/chapter}
+\include{C_Chapters/3_SD_Card_Preparation/chapter}
 
-\include{C_Chapters/3_Arcade_Machine_Setup/chapter}
+\include{C_Chapters/4_Arcade_Machine_Setup/chapter}
 
-\include{C_Chapters/4_Configurations/chapter}
+\include{C_Chapters/5_Configurations/chapter}
+
+\include{C_Chapters/6_Conclusion/chapter}
 
 \end{document}

@@ -30,7 +30,7 @@ Keyboard inputs are mainly used for configuration and system navigation. To set 
     \end{itemize}
 \end{enumerate}
 
-These are some useful key or cobinations:
+These are some useful key or combinations:
 \begin{itemize}
   \item Hotkey + Enter: Exit to EmulationStation
   \item F4: Enter terminal when on EmulationStation
@@ -79,11 +79,11 @@ In order to configure startup game, you need to open terminal on Raspberry Pi. F
         \begin{verbatim}
           $ nano autostart.sh
         \end{verbatim}
-      \item Edit the following part of the line:
+      \item Edit the following part of the command text:
         \begin{verbatim}
           "nes" "$HOME/RetroPie/roms/nes/game_name.nes"
         \end{verbatim}
-        Please do not forget the specify your game system (nes, snes, arcade, etc.) when the game is changed.
+      The first argument specifies the game system, while the second defines the path to the game ROM. Ensure that the corresponding system (NES, SNES, Arcade, etc.) is correctly indicated whenever the game is changed. Please do not modify any other part of the command.
       \item Save the file with \textbf{Ctrl + O}, then \textbf{Enter}, then \textbf{Ctrl + X}
       \item Restart the system:
         \begin{verbatim}
